@@ -522,14 +522,14 @@ footer a:hover{color:var(--amber)}
       <input type="hidden" name="_next" value="https://whalen.art/?sent=1" />
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
       <label>YOUR NAME</label>
-      <input type="text" name="name" autocomplete="name" required />
+      <input type="text" name="Name" autocomplete="name" required />
       <label>EMAIL</label>
       <input type="email" name="email" autocomplete="email" required />
       <label>WHAT FEELING SHOULD THE WORK HOLD?</label>
-      <textarea name="message" maxlength="500" required></textarea>
+      <textarea name="The feeling you want the work to hold" id="feelingField" maxlength="500" required></textarea>
       <div class="hint">The feeling you want to hold when you stand before it. A grief, a joy, an idea not yet named. &nbsp;<span id="count">0/500</span></div>
       <label>HOW DID YOU FIND JOHNDAVID?</label>
-      <input type="text" name="source" />
+      <input type="text" name="How you found JohnDavid" />
       <button type="submit">SEND COMMISSION</button>
       <div class="form-msg" id="formMsg"></div>
     </form>
@@ -705,7 +705,7 @@ document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
 setTimeout(function(){ document.querySelectorAll("#hero .reveal").forEach(function(el){ el.classList.add("visible"); }); }, 9000);
 
 /* ---- char count ---- */
-var ta = document.querySelector('textarea[name=message]');
+var ta = document.getElementById('feelingField');
 var cnt = document.getElementById("count");
 if(ta){ ta.addEventListener("input", function(){ cnt.textContent = ta.value.length + "/500"; }); }
 
