@@ -121,8 +121,12 @@ img{display:block;max-width:100%}
 .dim{color:rgba(245,242,235,.45)}
 
 /* LOADER */
-#loader{position:fixed;inset:0;background:var(--bg);z-index:1000;display:flex;align-items:center;justify-content:center;transition:opacity .8s ease}
+#loader{position:fixed;inset:0;background:var(--bg);z-index:1000;display:flex;align-items:center;justify-content:center;transition:opacity .8s ease;overflow:hidden}
 #loader.done{opacity:0;pointer-events:none}
+#staticFx{position:absolute;inset:0;width:100%;height:100%;opacity:.14;pointer-events:none;mix-blend-mode:screen;z-index:0}
+#loader .lo-scan{position:absolute;inset:0;pointer-events:none;z-index:1;background:repeating-linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0) 2px,rgba(0,0,0,.28) 3px,rgba(0,0,0,0) 4px);opacity:.5;animation:scanRoll 6s linear infinite}
+@keyframes scanRoll{to{background-position:0 100px}}
+#loader .lo-top,#loader .lo-center,#loader .lo-log{position:relative;z-index:2}
 #loader .lo-top{position:absolute;top:34px;right:40px;font-size:10px;letter-spacing:3px;color:var(--amber2);opacity:.7}
 #loader .lo-center{text-align:center}
 #loader .lo-center .t1{font-size:14px;letter-spacing:10px;color:var(--amber2);opacity:.85}
@@ -178,7 +182,7 @@ section{position:relative;padding:120px 44px;max-width:1400px;margin:0 auto}
 #hero>*,#collection>*,#reality>*,#commission>*{position:relative;z-index:1}
 
 #hero .meta{font-size:10px;letter-spacing:3px;color:var(--amber2);opacity:.85;margin:0}
-#hero .hero-name{font-family:var(--serif);font-style:normal;font-weight:400;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(46px,10vw,120px);line-height:.98;color:var(--fg);margin:24px 0 0}
+#hero .hero-name{font-family:var(--serif);font-style:normal;font-weight:400;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(22px,6.6vw,82px);line-height:1;white-space:nowrap;color:var(--fg);margin:24px 0 0}
 #hero .hero-rule{width:min(560px,86%);height:1px;background:var(--amber2);opacity:.6;margin:32px 0 28px}
 #hero .hero-q{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(22px,3.2vw,40px);line-height:1.2;color:rgba(255,255,255,.72);max-width:26ch;margin-top:22px}
 #hero .scroll{margin-top:80px;font-size:10px;letter-spacing:4px;color:rgba(245,242,235,.4)}
@@ -214,8 +218,12 @@ section{position:relative;padding:120px 44px;max-width:1400px;margin:0 auto}
 .piece{position:relative;background:#0b0b08;overflow:hidden;aspect-ratio:1/1}
 .piece img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease,filter .6s ease;filter:brightness(.9)}
 .piece:hover img{transform:scale(1.05);filter:brightness(1.05)}
-.piece video.swork{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.9);transition:transform 1.4s ease,filter .6s ease;background:#0b0b08;z-index:1}
-.piece:hover video.swork{transform:scale(1.04);filter:brightness(1.06)}
+.piece video.swork{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:transparent;filter:brightness(.96);transition:filter .6s ease;z-index:1}
+.piece:hover video.swork{filter:brightness(1.05)}
+/* series tiles show the whole film over the World Without End icon (no black bars) */
+.piece.awwe{background-image:url("https://drive.google.com/thumbnail?sz=w1200&id=1W5LSmVLRduxNy_77AeFbElKXEkTZYQNb");background-size:cover;background-position:center}
+.piece.awwe::after{content:"";position:absolute;inset:0;background:rgba(7,7,5,.35);z-index:0;pointer-events:none}
+.piece.awwe video.swork,.piece.awwe img{object-fit:contain}
 .piece .num{position:absolute;top:14px;left:16px;font-size:10px;letter-spacing:2px;color:rgba(245,242,235,.7);z-index:2}
 .piece .vec{position:absolute;top:14px;right:16px;font-size:8px;letter-spacing:1px;color:var(--amber2);opacity:.75;z-index:2}
 .piece .info{position:absolute;left:0;right:0;bottom:0;padding:18px 16px;background:linear-gradient(transparent,rgba(7,7,5,.9));z-index:2}
@@ -289,6 +297,8 @@ footer a:hover{color:var(--amber)}
 
 <!-- LOADER -->
 <div id="loader">
+  <canvas id="staticFx"></canvas>
+  <div class="lo-scan"></div>
   <div class="lo-top">ALGORITHM LOADING</div>
   <div class="lo-center">
     <div class="t1">STUDIO&nbsp;&nbsp;SYSTEM</div>
@@ -319,7 +329,7 @@ footer a:hover{color:var(--amber)}
 <!-- HERO -->
 <header id="hero">
   <div class="tlabel reveal">ARTIST</div>
-  <h1 class="hero-name reveal">JOHNDAVID<br>WHALEN</h1>
+  <h1 class="hero-name reveal">JOHNDAVID WHALEN</h1>
   <div class="hero-rule reveal"></div>
   <div class="meta reveal">&gt; CONSCIOUSNESS: UNDEFINED&nbsp;&nbsp;/&nbsp;&nbsp;BOUNDARY: [NULL]</div>
   <div class="hero-q reveal">Where does the machine end and the mind begin?</div>
@@ -576,7 +586,7 @@ WORKS.forEach(function(w){
   var slug = w.img.split('/').pop().replace('.jpg','');
   var vsrc = "assets/series-video/"+slug+".mp4";
   var a = document.createElement("div");
-  a.className = "piece reveal";
+  a.className = "piece awwe reveal";
   a.innerHTML =
     '<span class="num">'+w.n+'</span>'+
     '<span class="vec">'+w.v+'</span>'+
@@ -611,6 +621,42 @@ REALITY.forEach(function(w){
 window.addEventListener("load", function(){
   setTimeout(function(){ document.getElementById("loader").classList.add("done"); }, 2400);
 });
+
+/* ---- boot static (visual) + synthesized static burst (audio) ---- */
+(function(){
+  var cv=document.getElementById('staticFx'); if(!cv) return;
+  var g=cv.getContext('2d'), raf, running=true;
+  function size(){ cv.width=Math.min(window.innerWidth||900,960); cv.height=Math.min(window.innerHeight||600,640); }
+  size();
+  function draw(){
+    if(!running) return;
+    var w=cv.width,h=cv.height,img=g.createImageData(w,h),d=img.data;
+    for(var i=0;i<d.length;i+=4){ var v=Math.random()*255; d[i]=d[i+1]=d[i+2]=v; d[i+3]=255; }
+    g.putImageData(img,0,0); raf=requestAnimationFrame(draw);
+  }
+  draw();
+  setTimeout(function(){ running=false; cancelAnimationFrame(raf); }, 2600);
+
+  /* browsers block autoplay sound; play a short synthesized static burst on first interaction */
+  var played=false;
+  function boot(){
+    if(played) return; played=true;
+    try{
+      var AC=window.AudioContext||window.webkitAudioContext, ac=new AC(), t=ac.currentTime, dur=0.9, sr=ac.sampleRate;
+      var buf=ac.createBuffer(1, Math.floor(sr*dur), sr), ch=buf.getChannelData(0);
+      for(var i=0;i<ch.length;i++){ ch[i]=(Math.random()*2-1)*Math.pow(1-i/ch.length,1.6); }
+      var n=ac.createBufferSource(); n.buffer=buf;
+      var lp=ac.createBiquadFilter(); lp.type='lowpass'; lp.frequency.setValueAtTime(1900,t); lp.frequency.exponentialRampToValueAtTime(320,t+dur);
+      var ng=ac.createGain(); ng.gain.setValueAtTime(0.16,t); ng.gain.exponentialRampToValueAtTime(0.001,t+dur);
+      n.connect(lp); lp.connect(ng); ng.connect(ac.destination); n.start();
+      var osc=ac.createOscillator(); osc.type='sine'; osc.frequency.setValueAtTime(430,t); osc.frequency.exponentialRampToValueAtTime(150,t+0.5);
+      var og=ac.createGain(); og.gain.setValueAtTime(0.045,t); og.gain.exponentialRampToValueAtTime(0.001,t+0.5);
+      osc.connect(og); og.connect(ac.destination); osc.start(); osc.stop(t+0.5);
+    }catch(e){}
+    ['pointerdown','keydown','scroll','touchstart'].forEach(function(ev){ window.removeEventListener(ev,boot); });
+  }
+  ['pointerdown','keydown','scroll','touchstart'].forEach(function(ev){ window.addEventListener(ev,boot,{passive:true}); });
+})();
 
 /* ---- reveal on scroll ---- */
 var io = new IntersectionObserver(function(entries){
