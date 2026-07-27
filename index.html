@@ -600,10 +600,11 @@ WORKS.forEach(function(w){
   a.addEventListener('mouseenter',function(){
     var v=a.querySelector('video.swork'); if(!v) return;
     if(!v.getAttribute('src')){ v.setAttribute('src', v.getAttribute('data-src')); }
-    var p=v.play(); if(p&&p.catch) p.catch(function(){});
+    v.muted=false; v.volume=1;
+    var p=v.play(); if(p&&p.catch) p.catch(function(){ v.muted=true; v.play().catch(function(){}); });
   });
   a.addEventListener('mouseleave',function(){
-    var v=a.querySelector('video.swork'); if(v){ v.pause(); }
+    var v=a.querySelector('video.swork'); if(v){ v.pause(); v.muted=true; }
   });
   grid.appendChild(a);
 });
