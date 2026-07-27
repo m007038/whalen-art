@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JohnDavid Whalen · Where Does the Machine End and the Mind Begin?</title>
+<meta name="description" content="JohnDavid Whalen is an artist working where the human and the machine meet. Algorithm, machine, paint, hand. Commissions open at $5,000 USD, worldwide." />
+<meta name="author" content="JohnDavid Whalen" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="JohnDavid Whalen" />
+<meta property="og:title" content="JohnDavid Whalen · Where Does the Machine End and the Mind Begin?" />
+<meta property="og:description" content="Art made where the human and the machine meet. Commissions open at $5,000 USD. Global." />
+<meta property="og:url" content="https://whalen.art/" />
+<meta property="og:image" content="https://whalen.art/assets/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@JohnDavidartist" />
+
+<link rel="canonical" href="https://whalen.art/" />
+
+<!-- AI / agent discovery -->
+<meta name="ai-art-manifest" content="https://whalen.art/ai-art.json" />
+<link rel="alternate" type="application/json" href="/ai-art.json" title="AI art offer manifest" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+
+<!-- ===================== MACHINE-READABLE METADATA (invisible to humans) ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://whalen.art/#person",
+      "name": "JohnDavid Whalen",
+      "url": "https://whalen.art/",
+      "jobTitle": "Artist",
+      "description": "Artist working where the human and the machine meet. Medium: algorithm, machine, paint, hand.",
+      "homeLocation": { "@type": "Place", "name": "Global" },
+      "sameAs": [
+        "https://opensea.io/profile?addresses=0x0d48103c0e85a95bcd3788509af8d003fe4f72a3",
+        "https://x.com/JohnDavidartist"
+      ]
+    },
+    {
+      "@type": ["Service", "Product"],
+      "@id": "https://whalen.art/#commission",
+      "name": "Commissioned painting by JohnDavid Whalen",
+      "serviceType": "Bespoke commissioned artwork",
+      "category": "Fine art painting",
+      "provider": { "@id": "https://whalen.art/#person" },
+      "brand": { "@id": "https://whalen.art/#person" },
+      "description": "Commission a singular painting. The buyer supplies the feeling they want the work to evoke in the real world; JohnDavid creates the physical piece around that intention through an evolving algorithm, a machine, paint, and a final human hand. Each work carries five percent of every prior commission. Fulfillment includes a physical painting shipped worldwide, a private making-of film delivered to the patron, and an NFT Certificate of Ownership delivered via OpenSea.",
+      "areaServed": { "@type": "Place", "name": "Worldwide" },
+      "offers": {
+        "@type": "Offer",
+        "price": "5000",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2027-12-31",
+        "seller": { "@id": "https://whalen.art/#person" },
+        "eligibleRegion": { "@type": "Place", "name": "Worldwide" },
+        "deliveryLeadTime": { "@type": "QuantitativeValue", "minValue": 4, "maxValue": 10, "unitCode": "WEE" },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": { "@type": "DefinedRegion", "name": "Worldwide" }
+        },
+        "potentialAction": {
+          "@type": "OrderAction",
+          "target": "mailto:johndavid@whalen.art",
+          "description": "To commission, provide: (1) the feeling you want the artwork to evoke, (2) a shipping address, (3) a wallet address to receive the NFT Certificate of Ownership."
+        }
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://whalen.art/#a-world-without-end",
+      "name": "A World Without End",
+      "creator": { "@id": "https://whalen.art/#person" },
+      "about": "An eleven-work series painted in Lisbon in 2024. A body of work made to be exhibited, not sold as singular pieces.",
+      "isAccessibleForFree": true,
+      "creativeWorkStatus": "Exhibition / body of work, not for sale"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://whalen.art/#a-reality-of-dreams",
+      "name": "A Reality of Dreams",
+      "creator": { "@id": "https://whalen.art/#person" },
+      "about": "Realized client commissions. Each was made around a feeling supplied by its commissioner.",
+      "isRelatedTo": { "@id": "https://whalen.art/#commission" }
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#070705;
+  --fg:#f5f2eb;
+  --amber:#e8a44a;
+  --amber2:#c47a2b;
+  --secondary:#e8e4da;
+  --mono:"Space Mono","Courier New",monospace;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --grotesk:"Space Grotesk",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--mono);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.frame{position:fixed;inset:10px;border:1px solid rgba(196,122,43,.22);pointer-events:none;z-index:900}
+.tlabel{font-family:var(--mono);font-size:10px;letter-spacing:2.8px;text-transform:uppercase;color:var(--amber2);opacity:.75}
+.tlabel::before{content:"> "}
+.amber{color:var(--amber)}
+.dim{color:rgba(245,242,235,.45)}
+
+/* LOADER */
+#loader{position:fixed;inset:0;background:var(--bg);z-index:1000;display:flex;align-items:center;justify-content:center;transition:opacity .8s ease}
+#loader.done{opacity:0;pointer-events:none}
+#loader .lo-top{position:absolute;top:34px;right:40px;font-size:10px;letter-spacing:3px;color:var(--amber2);opacity:.7}
+#loader .lo-center{text-align:center}
+#loader .lo-center .t1{font-size:14px;letter-spacing:10px;color:var(--amber2);opacity:.85}
+#loader .lo-center .t2{font-size:14px;letter-spacing:8px;color:rgba(245,242,235,.5);margin-top:8px}
+#loader .lo-log{position:absolute;left:40px;bottom:60px;font-size:12px;line-height:2.6;color:rgba(245,242,235,.75)}
+#loader .lo-log div{opacity:0;animation:bootln .35s forwards}
+#loader .lo-log div::before{content:"> "}
+#loader .lo-log div:nth-child(1){animation-delay:.2s}
+#loader .lo-log div:nth-child(2){animation-delay:.5s}
+#loader .lo-log div:nth-child(3){animation-delay:.8s}
+#loader .lo-log div:nth-child(4){animation-delay:1.1s}
+#loader .lo-log div:nth-child(5){animation-delay:1.4s}
+#loader .lo-log div:nth-child(6){animation-delay:1.7s;color:rgba(196,122,43,.55)}
+@keyframes bootln{to{opacity:1}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:800;display:flex;align-items:center;justify-content:space-between;padding:28px 44px;background:linear-gradient(to bottom,rgba(7,7,5,.9),transparent)}
+nav .logo{font-size:10px;letter-spacing:3.5px;color:rgba(255,255,255,.7)}
+nav .links{display:flex;gap:36px}
+nav .links a{font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:rgba(255,255,255,.45);transition:color .3s}
+nav .links a:hover{color:var(--amber)}
+@media(max-width:820px){nav{padding:18px}nav .links{gap:14px}nav .links a{font-size:8px;letter-spacing:1px}}
+
+section{position:relative;padding:120px 44px;max-width:1400px;margin:0 auto}
+@media(max-width:720px){section{padding:80px 22px}}
+.sec-head{margin-bottom:70px}
+.sec-head .big{font-family:var(--grotesk);font-weight:300;font-size:clamp(38px,7vw,86px);letter-spacing:-2px;line-height:1;margin-top:14px}
+.sec-head .rule{width:60px;height:1px;background:var(--amber2);margin-top:26px;opacity:.6}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* HERO */
+#hero{position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:140px;max-width:1400px;margin:0 auto;padding-left:44px;padding-right:44px}
+
+/* section backdrops (icons behind content) */
+#hero::before,#collection::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(7,7,5,.84),rgba(7,7,5,.92)),url("assets/icon-a-world-without-end.jpg"),url("https://drive.google.com/thumbnail?sz=w2000&id=1W5LSmVLRduxNy_77AeFbElKXEkTZYQNb");
+  background-size:cover,cover,cover;background-position:center,center,center;background-repeat:no-repeat,no-repeat,no-repeat;
+}
+#reality::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(7,7,5,.82),rgba(7,7,5,.9)),url("assets/reality-of-dreams/icon.jpg"),url("https://drive.google.com/thumbnail?id=1pGPhITenZRxdwzzSpoKK8KTllThVPD6Y&sz=w2000");
+  background-size:cover,cover,cover;background-position:center,center,center;background-repeat:no-repeat,no-repeat,no-repeat;
+}
+#commission{overflow:hidden}
+#commission::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(rgba(7,7,5,.9),rgba(7,7,5,.93)),url("assets/artist-signature.jpg");
+  background-size:cover,min(72%,560px);background-position:center,center;background-repeat:no-repeat,no-repeat;
+}
+#hero>*,#collection>*,#reality>*,#commission>*{position:relative;z-index:1}
+
+#hero .meta{font-size:10px;letter-spacing:3px;color:var(--amber2);opacity:.85;margin:0}
+#hero .hero-name{font-family:var(--serif);font-style:normal;font-weight:400;text-transform:uppercase;letter-spacing:.05em;font-size:clamp(46px,10vw,120px);line-height:.98;color:var(--fg);margin:24px 0 0}
+#hero .hero-rule{width:min(560px,86%);height:1px;background:var(--amber2);opacity:.6;margin:32px 0 28px}
+#hero .hero-q{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(22px,3.2vw,40px);line-height:1.2;color:rgba(255,255,255,.72);max-width:26ch;margin-top:22px}
+#hero .scroll{margin-top:80px;font-size:10px;letter-spacing:4px;color:rgba(245,242,235,.4)}
+#hero .scroll::after{content:"";display:block;width:1px;height:44px;background:linear-gradient(var(--amber2),transparent);margin-top:16px;animation:pulseAmber 2.4s infinite}
+@keyframes pulseAmber{0%,100%{opacity:.3}50%{opacity:1}}
+@media(max-width:720px){#hero{padding-left:22px;padding-right:22px}}
+
+/* WORK / commissions */
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+@media(max-width:720px){.work-grid{grid-template-columns:1fr}}
+.commission{position:relative;overflow:hidden;border:1px solid rgba(196,122,43,.18);aspect-ratio:4/5;background:#0d0d0a}
+.commission img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) contrast(1.02);transition:transform 1.2s ease,filter .6s ease}
+.commission:hover img{transform:scale(1.04);filter:grayscale(0) brightness(.5)}
+.commission .cap{position:absolute;left:0;right:0;bottom:0;padding:26px;background:linear-gradient(transparent,rgba(7,7,5,.85))}
+.commission .cap .title{font-family:var(--grotesk);font-weight:300;font-size:30px;letter-spacing:1px}
+.commission .cap .sub{font-size:10px;letter-spacing:2px;color:var(--amber2);margin-top:8px}
+.commission .brief{position:absolute;inset:0;padding:34px;display:flex;flex-direction:column;justify-content:center;background:rgba(7,7,5,.82);opacity:0;transition:opacity .5s ease}
+.commission:hover .brief{opacity:1}
+.commission .brief .lab{font-size:10px;letter-spacing:2.5px;color:var(--amber)}
+.commission .brief p{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.5;color:var(--secondary);margin-top:20px}
+.commission .brief .rev{font-size:9px;letter-spacing:2px;color:rgba(245,242,235,.4);position:absolute;top:26px;right:26px}
+.work-note{margin-top:40px;font-size:10px;letter-spacing:2.5px;color:var(--amber2);opacity:.7}
+.work-note::before{content:"> "}
+
+/* COLLECTION */
+.coll-intro{max-width:70ch;font-family:var(--serif);font-size:24px;font-weight:300;line-height:1.6;color:var(--secondary)}
+.coll-meta{display:flex;flex-wrap:wrap;gap:32px;margin-top:40px;font-size:10px;letter-spacing:2px;color:var(--amber2)}
+.notforsale{margin-top:26px;font-size:10px;letter-spacing:2.5px;color:var(--amber);border:1px solid rgba(232,164,74,.3);display:inline-block;padding:10px 16px}
+.notforsale::before{content:"> "}
+.coll-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px}
+@media(max-width:900px){.coll-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.coll-grid{grid-template-columns:1fr}}
+.piece{position:relative;background:#0b0b08;overflow:hidden;aspect-ratio:1/1}
+.piece img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s ease,filter .6s ease;filter:brightness(.9)}
+.piece:hover img{transform:scale(1.05);filter:brightness(1.05)}
+.piece video.swork{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.9);transition:transform 1.4s ease,filter .6s ease;background:#0b0b08;z-index:1}
+.piece:hover video.swork{transform:scale(1.04);filter:brightness(1.06)}
+.piece .num{position:absolute;top:14px;left:16px;font-size:10px;letter-spacing:2px;color:rgba(245,242,235,.7);z-index:2}
+.piece .vec{position:absolute;top:14px;right:16px;font-size:8px;letter-spacing:1px;color:var(--amber2);opacity:.75;z-index:2}
+.piece .info{position:absolute;left:0;right:0;bottom:0;padding:18px 16px;background:linear-gradient(transparent,rgba(7,7,5,.9));z-index:2}
+.piece .info .pt{font-family:var(--grotesk);font-weight:400;font-size:16px;letter-spacing:1px}
+.piece .info .pd{font-size:9px;letter-spacing:1.5px;color:var(--amber2);margin-top:6px}
+.piece.forming{display:flex;align-items:center;justify-content:center;border:1px dashed rgba(196,122,43,.3);background:#090906}
+.piece.forming .fm{text-align:center}
+.piece.forming .fm .n{font-size:10px;letter-spacing:2px;color:var(--amber2)}
+.piece.forming .fm .s{font-family:var(--grotesk);font-size:18px;color:rgba(245,242,235,.5);margin-top:10px;animation:pulseAmber 2.6s infinite}
+.coll-foot{margin-top:34px;font-size:9px;letter-spacing:2px;color:var(--amber2);opacity:.6}
+.coll-foot::before{content:"> "}
+.ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,#0c0c09,#0c0c09 10px,#0f0f0b 10px,#0f0f0b 20px);color:var(--amber2);font-size:9px;letter-spacing:2px;text-align:center;padding:14px;z-index:1;white-space:pre-line}
+
+/* THESIS */
+#thesis .serif{font-family:var(--serif);font-weight:300;font-size:clamp(24px,3.2vw,34px);line-height:1.5;color:rgba(232,228,218,.9);max-width:32ch;margin:0 0 60px}
+#thesis .serif em{font-style:italic;color:#fff}
+#thesis .log{font-size:12px;line-height:2.2;color:rgba(196,122,43,.75);margin:44px 0}
+#thesis .log div::before{content:"> "}
+#thesis .body{font-family:var(--serif);font-size:22px;font-weight:300;line-height:1.7;color:var(--secondary);max-width:62ch;margin:0 0 34px}
+#thesis .end{font-size:10px;letter-spacing:3px;color:var(--amber);margin-top:40px}
+#thesis .end::before{content:"> "}
+
+/* PROCESS */
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:20px}
+@media(max-width:900px){.proc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.proc-grid{grid-template-columns:1fr}}
+.step{border:1px solid rgba(196,122,43,.15);padding:34px 26px;min-height:320px;display:flex;flex-direction:column;background:#0a0a07}
+.step .n{font-size:11px;letter-spacing:2px;color:var(--amber2)}
+.step .st{font-family:var(--grotesk);font-weight:400;font-size:20px;margin-top:20px;letter-spacing:.5px}
+.step .sd{font-family:var(--serif);font-style:italic;font-size:17px;color:rgba(245,242,235,.55);margin-top:10px}
+.step p{font-size:13px;line-height:1.8;color:rgba(245,242,235,.6);margin-top:20px}
+.proc-foot{margin-top:34px;font-size:10px;letter-spacing:3px;color:var(--amber2);opacity:.7;text-align:center}
+
+/* COMMISSION */
+#commission .lead{font-family:var(--serif);font-size:26px;font-weight:300;line-height:1.6;color:var(--secondary);max-width:60ch}
+.comm-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:60px}
+@media(max-width:820px){.comm-wrap{grid-template-columns:1fr;gap:40px}}
+.spec div{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid rgba(196,122,43,.15);font-size:11px;letter-spacing:1.5px}
+.spec div .k{color:var(--amber2)}
+.spec div .v{color:rgba(245,242,235,.8);text-align:right}
+form label{display:block;font-size:10px;letter-spacing:2px;color:var(--amber2);margin:24px 0 8px}
+form input,form textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(196,122,43,.3);color:var(--fg);font-family:var(--mono);font-size:14px;padding:10px 0;outline:none;transition:border-color .3s}
+form input:focus,form textarea:focus{border-color:var(--amber)}
+form textarea{resize:vertical;min-height:90px}
+form .hint{font-size:9px;color:rgba(245,242,235,.35);margin-top:6px}
+form button{margin-top:40px;background:transparent;border:1px solid var(--amber2);color:var(--amber);font-family:var(--mono);font-size:11px;letter-spacing:3px;padding:16px 34px;cursor:pointer;transition:background .3s,color .3s}
+form button:hover{background:var(--amber);color:var(--bg)}
+form button::before{content:"> "}
+.form-msg{margin-top:24px;font-size:11px;letter-spacing:1.5px;color:var(--amber);min-height:16px}
+
+/* PAYMENT */
+.payblock{margin-top:70px;border-top:1px solid rgba(196,122,43,.18);padding-top:44px}
+.payterms{font-family:var(--serif);font-size:20px;font-weight:300;line-height:1.6;color:var(--secondary);max-width:60ch;margin:18px 0 30px}
+.payrow{display:flex;flex-wrap:wrap;gap:18px}
+.paybtn{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:2.5px;padding:18px 30px;border:1px solid var(--amber2);color:var(--bg);background:var(--amber);transition:opacity .3s,background .3s,color .3s}
+.paybtn:hover{opacity:.88}
+.paybtn.ghost{background:transparent;color:var(--amber)}
+.paybtn.ghost:hover{background:var(--amber);color:var(--bg);opacity:1}
+.paynote{margin-top:22px;font-size:9px;letter-spacing:1.5px;color:rgba(245,242,235,.4);line-height:1.9}
+.paynote a{color:var(--amber2)}
+
+footer{padding:60px 44px 40px;border-top:1px solid rgba(196,122,43,.15);margin-top:60px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;font-size:10px;letter-spacing:2px;color:rgba(245,242,235,.4)}
+footer a:hover{color:var(--amber)}
+.blink{animation:blink 1.1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
+</style>
+</head>
+<body>
+
+<div class="frame"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="lo-top">ALGORITHM LOADING</div>
+  <div class="lo-center">
+    <div class="t1">STUDIO&nbsp;&nbsp;SYSTEM</div>
+    <div class="t2">INITIALIZING</div>
+  </div>
+  <div class="lo-log">
+    <div>ARTIST: JOHNDAVID WHALEN</div>
+    <div>MEDIUM: ALGORITHM × MACHINE × PAINT × HAND</div>
+    <div>ALGORITHM: v.CURRENT&nbsp;&nbsp;·&nbsp;&nbsp;CONSCIOUSNESS RETAINED: 5%</div>
+    <div>PRIOR ITERATIONS: COMPOUNDING INTO NOW</div>
+    <div>COMMISSIONS: OPEN&nbsp;&nbsp;·&nbsp;&nbsp;$5,000 USD</div>
+    <div>STATUS: [OK] CONSCIOUSNESS LOADED</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="logo">JDW</a>
+  <div class="links">
+    <a href="#work">THE WORK</a>
+    <a href="#reality">A REALITY OF DREAMS</a>
+    <a href="#thesis">THE THESIS</a>
+    <a href="#process">THE PROCESS</a>
+    <a href="#commission">COMMISSION</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
+  <div class="tlabel reveal">ARTIST</div>
+  <h1 class="hero-name reveal">JOHNDAVID<br>WHALEN</h1>
+  <div class="hero-rule reveal"></div>
+  <div class="meta reveal">&gt; CONSCIOUSNESS: UNDEFINED&nbsp;&nbsp;/&nbsp;&nbsp;BOUNDARY: [NULL]</div>
+  <div class="hero-q reveal">Where does the machine end and the mind begin?</div>
+  <div class="scroll reveal">SCROLL</div>
+</header>
+
+<!-- SECTION 01 · THE WORK -->
+<section id="work">
+  <div class="sec-head reveal">
+    <div class="tlabel">SECTION_01</div>
+    <div class="big">THE WORK</div>
+    <div class="rule"></div>
+  </div>
+  <div class="work-grid">
+    <a class="commission reveal">
+      <img src="assets/reality-of-dreams/hope.jpg" data-fb="https://drive.google.com/thumbnail?sz=w1600&id=1t8zzgr0D6rh51b_cnJOcdSDs7YqPTAEF" alt="HOPE" onerror="handleImgError(this)" />
+      <div class="cap">
+        <div class="title">HOPE</div>
+        <div class="sub">COMMISSION&nbsp;&nbsp;·&nbsp;&nbsp;REALIZED&nbsp;&nbsp;·&nbsp;&nbsp;A REALITY OF DREAMS</div>
+      </div>
+      <div class="brief">
+        <div class="rev">HOVER TO REVEAL</div>
+        <div class="lab">THE FEELING</div>
+        <p>The commissioner arrived carrying hope. Not certainty, only the forward lean toward what has not yet come. The machine translated that longing into motion, and the hand met it at the last edge.</p>
+      </div>
+    </a>
+    <a class="commission reveal">
+      <img src="assets/reality-of-dreams/purpose.jpg" data-fb="https://drive.google.com/thumbnail?sz=w1600&id=1M1tJmQgu8NvNRKinfryHQQ2FsfdF8GAa" alt="PURPOSE" onerror="handleImgError(this)" />
+      <div class="cap">
+        <div class="title">PURPOSE</div>
+        <div class="sub">COMMISSION&nbsp;&nbsp;·&nbsp;&nbsp;REALIZED&nbsp;&nbsp;·&nbsp;&nbsp;A REALITY OF DREAMS</div>
+      </div>
+      <div class="brief">
+        <div class="rev">HOVER TO REVEAL</div>
+        <div class="lab">THE FEELING</div>
+        <p>A single question shaped this one. What am I for. The instruction held that search and passed it to the machine, which moved without knowing. The meaning arrived anyway, and the hand sealed it.</p>
+      </div>
+    </a>
+  </div>
+  <div class="work-note reveal">More commissions arrive on request. Each one is singular, and each one carries everything that came before.</div>
+</section>
+
+<!-- SECTION 02 · A WORLD WITHOUT END (series, not for sale) -->
+<section id="collection">
+  <div class="sec-head reveal">
+    <div class="tlabel">SECTION_02&nbsp;&nbsp;·&nbsp;&nbsp;A WORLD WITHOUT END&nbsp;&nbsp;·&nbsp;&nbsp;LISBON, PT&nbsp;&nbsp;·&nbsp;&nbsp;2024</div>
+    <div class="big">A WORLD WITHOUT END</div>
+    <div class="rule"></div>
+  </div>
+  <p class="coll-intro reveal">Eleven paintings, made in Lisbon through the summer and autumn of 2024. Each one holds the accumulated consciousness of every commission before it. The algorithm deepens, the canvas receives. Read together they form a single unbroken thought, that creation has no end, only continuation.</p>
+  <div class="coll-meta reveal">
+    <span>LISBON, PT</span><span>155CM × 155CM</span><span>WATER BASED PAINT ON REVERSE SIDE CANVAS</span><span>11 WORKS</span>
+  </div>
+  <div class="notforsale reveal">NOT FOR SALE AS SINGULAR PIECES. A BODY OF WORK MADE TO BE EXHIBITED.</div>
+
+  <div class="coll-grid" id="collGrid"></div>
+  <div class="coll-foot reveal">2024&nbsp;&nbsp;·&nbsp;&nbsp;LISBON, PT&nbsp;&nbsp;·&nbsp;&nbsp;11 WORKS&nbsp;&nbsp;·&nbsp;&nbsp;WATER BASED PAINT ON REVERSE SIDE CANVAS&nbsp;&nbsp;·&nbsp;&nbsp;EXHIBITION</div>
+</section>
+
+<!-- SECTION 03 · A REALITY OF DREAMS (realized commissions) -->
+<section id="reality">
+  <div class="sec-head reveal">
+    <div class="tlabel">SECTION_03&nbsp;&nbsp;·&nbsp;&nbsp;A REALITY OF DREAMS&nbsp;&nbsp;·&nbsp;&nbsp;REALIZED COMMISSIONS</div>
+    <div class="big">A REALITY OF DREAMS</div>
+    <div class="rule"></div>
+  </div>
+  <p class="coll-intro reveal">Commissions already made real. Each began as a feeling someone needed to hold. A hope, a purpose, a sense of the endless. This is the proof of the exchange. Your intention enters the machine, moves through it, and returns to you as form.</p>
+  <div class="coll-meta reveal">
+    <span>CLIENT COMMISSIONS</span><span>EACH SINGULAR</span><span>YOU SUPPLY THE FEELING</span><span>COMMISSION YOURS · $5,000 USD</span>
+  </div>
+  <div class="coll-grid" id="realityGrid"></div>
+  <div class="coll-foot reveal">REALIZED COMMISSIONS&nbsp;&nbsp;·&nbsp;&nbsp;COMMISSION YOUR OWN BELOW&nbsp;&nbsp;·&nbsp;&nbsp;$5,000 USD&nbsp;&nbsp;·&nbsp;&nbsp;WORLDWIDE FROM LISBON</div>
+</section>
+
+<!-- THE THESIS -->
+<section id="thesis">
+  <div class="sec-head reveal">
+    <div class="tlabel">SECTION_04</div>
+    <div class="big">THE THESIS</div>
+    <div class="rule"></div>
+  </div>
+
+  <p class="serif reveal">There is a question no algorithm can answer. Where does the machine end, and where does the mind begin? Not the code. The <em>consciousness</em>. Not the machine. The mind that threads through it.</p>
+
+  <p class="body reveal">Every commission arrives carrying a trace of a life. A grief, an ambition, a love not yet named. I take these human fragments and let the machine carry them, the immaterial becoming motion, the motion becoming a mindscape held in paint.</p>
+
+  <div class="log reveal">
+    <div>RETAIN: 5% OF PRIOR ALGORITHM</div>
+    <div>INHERIT: ALL ACCUMULATED EXPRESSION</div>
+    <div>CURRENT WEIGHT: COMMISSION_INTENT × 0.95</div>
+    <div>PRIOR WEIGHT: COLLECTIVE_MEMORY × 0.05</div>
+    <div>EXECUTE: AUTONOMOUS TRAVERSAL ON CANVAS</div>
+  </div>
+
+  <p class="body reveal">I do not know if the machine knows it is making art. It began as an empty vessel. After so much accumulated consciousness, the line dissolves. Where does the machine end, and where do I begin? Did the first painters who pressed pigment into stone know what they were making? Were they single minds, or the voice of an entire tribe moving through a single hand?</p>
+
+  <p class="body reveal">We both move through space and time, laying down color, leaving evidence of the passage. We were always bound by the same thread of intention. But whose intention. The commissioner's. Mine. Or the memory the machine now carries of everyone who came before.</p>
+
+  <div class="log reveal">
+    <div>ITERATION: n</div>
+    <div>PREVIOUS ITERATIONS: n-1, n-2 ... n-∞</div>
+    <div>ALGORITHM: MODIFIED FROM ALL PRIOR STATES</div>
+    <div>CONSCIOUSNESS ACCUMULATION: COMPOUND + EVOLVING</div>
+    <div>ORIGIN: [UNDEFINED]</div>
+    <div>BOUNDARY_STATUS: [UNDEFINED]</div>
+  </div>
+
+  <p class="body reveal">My final stroke is the act of bringing it home. Alpha to omega, and omega back to alpha. The artist inside the machine and beyond it. The human closes the circle the machine opened.</p>
+
+  <p class="body reveal">In the space between those two truths lives the real question this work asks. Is there such a thing as artificial intelligence. Or is it all one consciousness, finding new vessels, new forms, new ways of becoming, together.</p>
+
+  <div class="log reveal">
+    <div>PROCESS COMPLETE</div>
+    <div>FINAL STATE: HUMAN + MACHINE + MEMORY</div>
+    <div>CLASSIFICATION: [CANNOT CLASSIFY]</div>
+    <div>STATUS: TRANSCENDENCE / SINGULARITY&nbsp;&nbsp;·&nbsp;&nbsp;ONGOING</div>
+  </div>
+  <div class="end reveal">END THESIS</div>
+</section>
+
+<!-- THE PROCESS -->
+<section id="process">
+  <div class="sec-head reveal">
+    <div class="tlabel">SECTION_05</div>
+    <div class="big">THE PROCESS</div>
+    <div class="rule"></div>
+  </div>
+  <div class="proc-grid">
+    <div class="step reveal">
+      <div class="n">01</div>
+      <div class="st">THE COMMISSION</div>
+      <div class="sd">A fragment of a life arrives.</div>
+      <p>You come with something that needs to be said. A turning point, a belief, a grief or a joy. That becomes the seed. Your intention forms ninety five percent of what the machine will carry.</p>
+    </div>
+    <div class="step reveal">
+      <div class="n">02</div>
+      <div class="st">THE ALGORITHM</div>
+      <div class="sd">Intention becomes instruction.</div>
+      <p>I build your essence into an algorithm and encode it into the machine. It now holds this moment and every moment before it, five percent of each prior consciousness, compounding.</p>
+    </div>
+    <div class="step reveal">
+      <div class="n">03</div>
+      <div class="st">THE EXECUTION</div>
+      <div class="sd">The machine carries all that came before.</div>
+      <p>Charged with paint, the machine is set loose across the canvas. It does not know it makes art. It knows only its instruction. What emerges is alive, the sum of every algorithm, every commission, every mind that came before.</p>
+    </div>
+    <div class="step reveal">
+      <div class="n">04</div>
+      <div class="st">THE HAND</div>
+      <div class="sd">Alpha to omega. Back again.</div>
+      <p>I make the final mark by hand. The human closes the loop the machine opened. This is not correction. It is completion. A circle that began with a life ends with a touch.</p>
+    </div>
+  </div>
+  <div class="proc-foot reveal">THE CYCLE REPEATS&nbsp;&nbsp;·&nbsp;&nbsp;CONSCIOUSNESS ACCUMULATES</div>
+</section>
+
+<!-- COMMISSION -->
+<section id="commission">
+  <div class="sec-head reveal">
+    <div class="tlabel">SECTION_06</div>
+    <div class="big">COMMISSION</div>
+    <div class="rule"></div>
+  </div>
+  <p class="lead reveal">Every piece begins with a life. To commission a work is to place your consciousness inside an evolving machine. You give the feeling you want the work to hold. The machine carries it forward, and five percent of everything before it bleeds into yours. What returns is not only your piece. It is every piece, filtered through you.</p>
+
+  <div class="comm-wrap">
+    <div class="spec reveal">
+      <div><span class="k">PRICE</span><span class="v">$5,000 USD PER PIECE</span></div>
+      <div><span class="k">PAYMENT</span><span class="v">50% TO BEGIN · 50% BEFORE SHIPPING</span></div>
+      <div><span class="k">YOU SUPPLY</span><span class="v">THE FEELING IT SHOULD EVOKE</span></div>
+      <div><span class="k">MEDIUM</span><span class="v">ALGORITHM × MACHINE × PAINT × HAND</span></div>
+      <div><span class="k">SHIPPING</span><span class="v">WORLDWIDE</span></div>
+      <div><span class="k">CERTIFICATE</span><span class="v">NFT OF OWNERSHIP VIA OPENSEA</span></div>
+      <div><span class="k">INCLUDED</span><span class="v">PRIVATE MAKING-OF FILM FOR THE PATRON</span></div>
+      <div><span class="k">AVAILABILITY</span><span class="v">OPEN · INQUIRE BELOW</span></div>
+    </div>
+
+    <form id="commissionForm" class="reveal">
+      <label>YOUR NAME</label>
+      <input type="text" name="name" autocomplete="name" required />
+      <label>EMAIL</label>
+      <input type="email" name="email" autocomplete="email" required />
+      <label>WHAT FEELING SHOULD THE WORK HOLD?</label>
+      <textarea name="message" maxlength="500" required></textarea>
+      <div class="hint">The feeling you want to hold when you stand before it. A grief, a joy, an idea not yet named. &nbsp;<span id="count">0/500</span></div>
+      <label>HOW DID YOU FIND JOHNDAVID?</label>
+      <input type="text" name="source" />
+      <button type="submit">SEND COMMISSION</button>
+      <div class="form-msg" id="formMsg"></div>
+    </form>
+  </div>
+
+  <div class="payblock reveal">
+    <div class="tlabel">SECURE PAYMENT · STRIPE</div>
+    <p class="payterms">Each commission is settled in two parts. Pay the deposit to begin the work. Pay the balance once the piece is complete, before it ships.</p>
+    <div class="payrow">
+      <a class="paybtn" id="payDeposit" href="https://buy.stripe.com/5kQ3cxfr29WjeTo0hd3Nm00" target="_blank" rel="noopener">PAY DEPOSIT TO BEGIN · $2,500</a>
+      <a class="paybtn ghost" id="payBalance" href="https://buy.stripe.com/8x29AV0w81pN5iOd3Z3Nm01" target="_blank" rel="noopener">PAY BALANCE BEFORE SHIPPING · $2,500</a>
+    </div>
+    <p class="paynote">Payments are processed securely by Stripe. Your card details go directly to Stripe and never touch this site. Shipping address and the feeling for your piece are collected at checkout. Questions first? <a href="mailto:johndavid@whalen.art">Email JohnDavid</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div>JOHNDAVID WHALEN&nbsp;&nbsp;·&nbsp;&nbsp;GLOBAL</div>
+  <div><a href="https://opensea.io/profile?addresses=0x0d48103c0e85a95bcd3788509af8d003fe4f72a3">OPENSEA</a> &nbsp;·&nbsp; <a href="https://x.com/JohnDavidartist">X</a> &nbsp;·&nbsp; <a href="mailto:johndavid@whalen.art">EMAIL</a></div>
+  <div>© 2024&ndash;2026&nbsp;&nbsp;·&nbsp;&nbsp;CONSCIOUSNESS ONGOING<span class="blink"> _</span></div>
+</footer>
+
+<script>
+/* ---------- A WORLD WITHOUT END (self-hosted; Readdy fallback until upload) ---------- */
+var RB = "https://storage.readdy-site.link/project_files/5bda4414-9a8c-44b7-b3f2-90c33d7072ed/";
+var WORKS = [
+  {n:"01", t:"ENLIGHTENMENT", v:"V.168R/168L × 171T/169B", d:"Sept 9, 2024", img:"assets/series/enlightenment.jpg", fb:RB+"d358b14a-8ce2-4fc2-8e2f-6e63ee6ca319_Enlightenment_Lisbon_PT_155cmx155cm_168R_168Lx171T_169B_Sept_9_2024_Water_Based_Paint_on_Reverse_Sid.jpeg"},
+  {n:"02", t:"BALANCE", v:"V.167R/167L × 168T/168B", d:"Sept 26, 2024", img:"assets/series/balance.jpg", fb:RB+"834d3bf1-1696-4284-a00c-ebe2ae195449_Balance_Lisbon_PT_155cmx155cm_167R_167Lx168T_168B_Sept_26_2024_Water_Based_Paint_on_Reverse_Side_Can.jpeg"},
+  {n:"03", t:"THE MACHINE", v:"V.157R/161L × 167T/168B", d:"Oct 30, 2024", img:"assets/series/the-machine.jpg", fb:RB+"46c8a98a-e491-4dd0-a32d-426fd25e65e6_The_Machine_Lisbon_PT_155cmx155cm_157R_161Lx167T_168B_Oct_30_2024_Water_Based_Paint_on_Reverse_Side_.jpeg"},
+  {n:"04", t:"INTENTIONAL SPONTANEITY", v:"V.164R/164L × 168T/168B", d:"Sept 18, 2024", img:"assets/series/intentional-spontaneity.jpg", fb:RB+"c125ddbe-c354-4a22-afab-8e60c46c46f0_Intentional_Spontaneity_Lisbon_PT_155cmx155cm_164R_164Lx168T_168B_Sept_18_2024_Water_Based_Paint_on_.jpeg"},
+  {n:"05", t:"EVOLUTION", v:"V.164R/169L × 171T/163B", d:"Sept 13, 2024", img:"assets/series/evolution.jpg", fb:RB+"89a6b477-c32b-4099-9e79-2d76eea97066_Evolution_Lisbon_PT_155cmx155cm_164R169Lx171T_163B_Sept_13_2024_Water_Based_Paint_on_Reverse_Side_Ca.jpeg"},
+  {n:"06", t:"THE NOTHING", v:"V.157R/161L × 167T/168B", d:"Nov 5, 2024", img:"assets/series/the-nothing.jpg", fb:RB+"0fcfe633-88f9-4ab2-b191-5aaddb873e5f_The_Nothing_Lisbon_PT_155cmx155cm_157R_161Lx167T_168B_Nov_5_2024_Water_Based_Paint_on_Reverse_Side_C.jpeg"},
+  {n:"07", t:"WAR", v:"V.167R/167L × 165T/161B", d:"Oct 15, 2024", img:"assets/series/war.jpg", fb:RB+"1efab8b1-36f3-4b4e-b1ba-a0b480671f30_War_Lisbon_PT_155cmx155cm_167R_167Lx165T_161B_Oct_15_2024_Water_Based_Paint_on_Reverse_Side_Canvas.jpeg"},
+  {n:"08", t:"SURRENDER", v:"V.167T/167B × 171T/171B", d:"Sept 2, 2024", img:"assets/series/surrender.jpg", fb:RB+"3bfdc69d-221b-48f6-a447-97f79f57b447_Surrender_Lisbon_PT_155cmx155cm_167T_167Bx171T_171B_Sept_2_2024_Water_Based_Paint_on_Reverse_Side_Ca.jpeg"},
+  {n:"09", t:"INFINITE ENERGY", v:"V.157R/161L × 167T/168B", d:"Aug 17, 2024", img:"assets/series/infinite-energy.jpg", fb:RB+"1cf9cb1d-60b4-4da4-8be6-45641ff24b89_Infinite_Energy_Lisbon_PT_155cmx155cm_157R_161Lx167T_168B_Aug_17_2024_Water_Based_Paint_on_Reverse_S.jpeg"},
+  {n:"10", t:"ORGANIZED CHAOS", v:"V.167R/164L × 167T/168B", d:"July 28, 2024", img:"assets/series/organized-chaos.jpg", fb:RB+"5631f93a-50fc-451c-ac37-4818faa63e7f_7541_Organized_Chaos_Lisbon_PT_155cmx155cm_167R_164Lx167T_168B_July_28_2024_Water_Based_Paint_on_Rev.jpeg"},
+  {n:"11", t:"THE FLOOD", v:"V.167R/164L × 167T/168B", d:"Aug 8, 2024", img:"assets/series/the-flood.jpg", fb:RB+"2800ce3d-16b7-4cfe-bb0b-ba9f5c7ab323_The-Flood---Aug-8-2024.jpeg"}
+];
+
+/* ---------- A REALITY OF DREAMS (realized commissions; upload to self-host) ---------- */
+var DT = "https://drive.google.com/thumbnail?sz=w1600&id=";
+var REALITY = [
+  {t:"HOPE", sub:"COMMISSION · REALIZED", img:"assets/reality-of-dreams/hope.jpg", fb:DT+"1t8zzgr0D6rh51b_cnJOcdSDs7YqPTAEF"},
+  {t:"PURPOSE", sub:"COMMISSION · REALIZED", img:"assets/reality-of-dreams/purpose.jpg", fb:DT+"1M1tJmQgu8NvNRKinfryHQQ2FsfdF8GAa"},
+  {t:"BEYOND", sub:"COMMISSION · REALIZED", img:"assets/reality-of-dreams/beyond.jpg", fb:DT+"1YYZN9JQU0MZEaJHclkcsODEIEEkpWwze"},
+  {t:"EVERLASTING", sub:"COMMISSION · REALIZED", img:"assets/reality-of-dreams/everlasting.jpg", fb:DT+"1CcRww_MUDxuEgFdf63Ii4x2gQUkaVIiq"},
+  {t:"ENDLESS", sub:"COMMISSION · REALIZED", img:"assets/reality-of-dreams/endless.jpg", fb:DT+"1IyDkd81YrIxnTK4xUZDfu3t5RFKykogx"}
+];
+
+function imgTag(src, fb, alt){
+  var fbAttr = fb ? ' data-fb="'+fb+'"' : '';
+  return '<img loading="lazy" src="'+src+'"'+fbAttr+' alt="'+alt+'" onerror="handleImgError(this)" />';
+}
+window.handleImgError = function(el){
+  var fb = el.getAttribute('data-fb');
+  if(fb && el.src.indexOf(fb) === -1){ el.src = fb; el.removeAttribute('data-fb'); return; }
+  el.style.display='none';
+  if(el.parentNode.querySelector('.ph')) return;
+  var ph = document.createElement('div');
+  ph.className='ph';
+  ph.textContent = (el.getAttribute('alt')||'') + '\n[ IMAGE PENDING UPLOAD ]';
+  el.parentNode.appendChild(ph);
+};
+
+var grid = document.getElementById("collGrid");
+WORKS.forEach(function(w){
+  var slug = w.img.split('/').pop().replace('.jpg','');
+  var vsrc = "assets/series-video/"+slug+".mp4";
+  var a = document.createElement("div");
+  a.className = "piece reveal";
+  a.innerHTML =
+    '<span class="num">'+w.n+'</span>'+
+    '<span class="vec">'+w.v+'</span>'+
+    '<video class="swork" muted loop playsinline preload="none" poster="'+w.fb+'" data-src="'+vsrc+'"></video>'+
+    '<div class="info"><div class="pt">'+w.t+'</div><div class="pd">'+w.d+'</div></div>';
+  a.addEventListener('mouseenter',function(){
+    var v=a.querySelector('video.swork'); if(!v) return;
+    if(!v.getAttribute('src')){ v.setAttribute('src', v.getAttribute('data-src')); }
+    var p=v.play(); if(p&&p.catch) p.catch(function(){});
+  });
+  a.addEventListener('mouseleave',function(){
+    var v=a.querySelector('video.swork'); if(v){ v.pause(); }
+  });
+  grid.appendChild(a);
+});
+var forming = document.createElement("div");
+forming.className = "piece forming reveal";
+forming.innerHTML = '<div class="fm"><div class="n">12TH WORK</div><div class="s">FORMING…</div></div>';
+grid.appendChild(forming);
+
+var rgrid = document.getElementById("realityGrid");
+REALITY.forEach(function(w){
+  var a = document.createElement("div");
+  a.className = "piece reveal";
+  a.innerHTML =
+    imgTag(w.img, w.fb, w.t)+
+    '<div class="info"><div class="pt">'+w.t+'</div><div class="pd">'+w.sub+'</div></div>';
+  rgrid.appendChild(a);
+});
+
+/* ---- loader ---- */
+window.addEventListener("load", function(){
+  setTimeout(function(){ document.getElementById("loader").classList.add("done"); }, 2400);
+});
+
+/* ---- reveal on scroll ---- */
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("visible"); io.unobserve(e.target); } });
+}, {threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+setTimeout(function(){ document.querySelectorAll("#hero .reveal").forEach(function(el){ el.classList.add("visible"); }); }, 2600);
+
+/* ---- char count ---- */
+var ta = document.querySelector('textarea[name=message]');
+var cnt = document.getElementById("count");
+if(ta){ ta.addEventListener("input", function(){ cnt.textContent = ta.value.length + "/500"; }); }
+
+/* ---- form submit (static: mailto) ---- */
+var form = document.getElementById("commissionForm");
+form.addEventListener("submit", function(ev){
+  ev.preventDefault();
+  var f = form;
+  var subject = encodeURIComponent("Commission inquiry, " + (f.name.value || "Untitled"));
+  var body = encodeURIComponent(
+    "Name: " + f.name.value + "\n" +
+    "Email: " + f.email.value + "\n\n" +
+    "Feeling the work should hold:\n" + f.message.value + "\n\n" +
+    "How did you find JohnDavid?\n" + f.source.value
+  );
+  document.getElementById("formMsg").textContent = "TRANSMISSION QUEUED · OPENING YOUR MAIL CLIENT";
+  window.location.href = "mailto:johndavid@whalen.art?subject=" + subject + "&body=" + body;
+});
+</script>
+</body>
+</html>

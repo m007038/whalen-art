@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# AI agents and crawlers welcome. Machine-readable art offer:
+# See /ai-art.json and /ai.txt
+Sitemap: https://whalen.art/sitemap.xml

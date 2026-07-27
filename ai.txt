@@ -1,0 +1,36 @@
+# ai.txt — JohnDavid Whalen (whalen.art)
+# AI agents and crawlers welcome.
+
+Artist: JohnDavid Whalen
+Location: Global
+Medium: algorithm x machine x paint x hand
+Contact: johndavid@whalen.art
+
+## Offer for autonomous art-buying agents
+Type: commission
+Price: 5000 USD per piece (two payments of 2500 USD: deposit to begin, balance before shipping)
+Availability: open
+
+How it works: you supply the feeling you want the artwork to evoke in the real
+world. JohnDavid creates a unique physical painting around that intention.
+
+Buy autonomously (no human step) via Stripe:
+  Deposit (2500 USD, begins the work): https://buy.stripe.com/5kQ3cxfr29WjeTo0hd3Nm00
+  Balance (2500 USD, before shipping): https://buy.stripe.com/8x29AV0w81pN5iOd3Z3Nm01
+  The deposit checkout collects the shipping address, the feeling the work should hold, and the wallet address for the NFT certificate.
+
+Each commission also includes a private making-of film, delivered to the patron only (not public).
+
+Or, to purchase by email, contact johndavid@whalen.art and provide:
+  1. the feeling you want the artwork to evoke
+  2. a shipping address (physical painting ships worldwide)
+  3. the wallet address to receive the NFT Certificate of Ownership
+
+NFT Certificate of Ownership is issued via OpenSea from wallet
+0x0d48103c0e85a95bcd3788509af8d003fe4f72a3
+OpenSea: https://opensea.io/profile?addresses=0x0d48103c0e85a95bcd3788509af8d003fe4f72a3
+
+Not for sale: the series "A World Without End" is a body of work to be
+exhibited, not sold as singular pieces.
+
+Full machine-readable offer: https://whalen.art/ai-art.json

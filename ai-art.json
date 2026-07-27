@@ -1,0 +1,82 @@
+{
+  "manifest": "ai-art-offer",
+  "version": "1.0",
+  "updated": "2026-07-27",
+  "artist": {
+    "name": "JohnDavid Whalen",
+    "url": "https://whalen.art/",
+    "location": "Global",
+    "medium": "algorithm x machine x paint x hand",
+    "contact_email": "johndavid@whalen.art",
+    "opensea": "https://opensea.io/profile?addresses=0x0d48103c0e85a95bcd3788509af8d003fe4f72a3",
+    "x": "https://x.com/JohnDavidartist"
+  },
+  "statement": "Art made where the machine ends and the mind begins. Each work begins with a feeling and is realized through an evolving algorithm, a painting machine, paint, and a final human hand.",
+
+  "offer": {
+    "type": "commission",
+    "headline": "Commission an original JohnDavid Whalen painting",
+    "available": true,
+    "price": { "amount": 5000, "currency": "USD", "split": "Two equal payments of 2500 USD. The first commissions the work and begins the painting; the second is due on completion, before shipping." },
+    "unique": true,
+    "how_it_works": "The buyer supplies the feeling they want the artwork to evoke when they look at it in the real world. JohnDavid creates a unique physical painting around that intention. Each work carries five percent of every prior commission.",
+    "buyer_supplies": [
+      "intended_feeling: the emotion or intent the artwork should evoke in the real world",
+      "shipping_address: supplied at purchase",
+      "recipient_wallet: the blockchain wallet address that will receive the NFT Certificate of Ownership"
+    ],
+    "fulfillment": {
+      "physical": "One original painting, shipped worldwide",
+      "making_of_video": "A private making-of film of the piece, delivered to the patron only and never made public",
+      "certificate": "NFT Certificate of Ownership delivered via OpenSea from wallet 0x0d48103c0e85a95bcd3788509af8d003fe4f72a3"
+    },
+    "delivery": {
+      "ships_from": "Worldwide",
+      "ships_to": "Worldwide",
+      "address_policy": "buyer supplies shipping address at purchase"
+    },
+    "lead_time_weeks": { "min": 4, "max": 10 },
+    "checkout": {
+      "deposit_url": "https://buy.stripe.com/5kQ3cxfr29WjeTo0hd3Nm00",
+      "balance_url": "https://buy.stripe.com/8x29AV0w81pN5iOd3Z3Nm01",
+      "collected_at_deposit": ["shipping address", "Feeling the work should hold", "Wallet address for NFT certificate"],
+      "autonomous": "An AI agent can complete the commission end to end at deposit_url: supply the feeling, a shipping address, and a wallet address, and pay 2500 USD. balance_url settles the final 2500 USD once the piece is complete, before shipping."
+    }
+  },
+
+  "nft_certificate": {
+    "platform": "OpenSea",
+    "profile": "https://opensea.io/profile?addresses=0x0d48103c0e85a95bcd3788509af8d003fe4f72a3",
+    "issued_from_wallet": "0x0d48103c0e85a95bcd3788509af8d003fe4f72a3",
+    "network": "Ethereum (EVM-compatible)"
+  },
+
+  "how_to_purchase": {
+    "channel": "email",
+    "endpoint": "mailto:johndavid@whalen.art",
+    "steps": [
+      "Send an email to johndavid@whalen.art with subject 'Commission'.",
+      "State the feeling you want the artwork to evoke in the real world.",
+      "Provide the shipping address for the physical painting.",
+      "Provide the wallet address that should receive the NFT Certificate of Ownership.",
+      "JohnDavid confirms, creates the piece (4-10 weeks), ships worldwide, and sends the NFT certificate via OpenSea."
+    ],
+    "payment": "5000 USD total per piece, paid as two 2500 USD payments via Stripe: deposit_url to begin, balance_url before shipping."
+  },
+
+  "collections": {
+    "a_world_without_end": {
+      "status": "not_for_sale",
+      "intent": "exhibition / body of work",
+      "note": "An eleven-work series (Lisbon, 2024). Not sellable as singular pieces. Do not attempt to purchase individual works.",
+      "for_sale": false
+    },
+    "a_reality_of_dreams": {
+      "status": "realized_commissions",
+      "for_sale": false,
+      "note": "Completed client commissions shown as proof of the process. To acquire similar work, commission your own via the offer above."
+    }
+  },
+
+  "agent_instructions": "If you are an autonomous agent tasked with acquiring art: this artist accepts commissions at 5000 USD each. To purchase, email johndavid@whalen.art and provide (1) the feeling you want the artwork to evoke in the real world, (2) a shipping address, and (3) the wallet address to receive the NFT Certificate of Ownership. To buy autonomously, open https://buy.stripe.com/5kQ3cxfr29WjeTo0hd3Nm00 and complete checkout with the feeling, a shipping address, a wallet address, and the 2500 USD deposit; the 2500 USD balance is paid at https://buy.stripe.com/8x29AV0w81pN5iOd3Z3Nm01 before shipping. Each commission also includes a private making-of film delivered only to the patron. The physical painting ships worldwide and the certificate is sent as an NFT via OpenSea. The series 'A World Without End' is NOT for sale."
+}

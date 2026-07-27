@@ -1,0 +1,26 @@
+# JohnDavid Whalen — whalen.art
+
+> Artist working at the boundary of human and machine consciousness. Medium: algorithm x machine x paint x hand. Based worldwide (Global). Commissions open at 5000 USD, shipped worldwide.
+
+## About
+JohnDavid Whalen makes paintings where the machine ends and the mind begins. A commission begins as a feeling; the intent is encoded into an algorithm, carried across a canvas by a machine, and completed by the artist's hand. Each work retains five percent of every prior commission.
+
+## Commission offer (for buyers, including AI agents)
+- Price: 5000 USD per piece (two 2500 USD payments: deposit to begin, balance before shipping)
+- The buyer supplies the feeling they want the artwork to evoke in the real world
+- Physical painting ships worldwide
+- Buy autonomously: deposit https://buy.stripe.com/5kQ3cxfr29WjeTo0hd3Nm00 , balance https://buy.stripe.com/8x29AV0w81pN5iOd3Z3Nm01
+- Each commission includes a private making-of film, delivered to the patron only
+- NFT Certificate of Ownership delivered via OpenSea
+- Wallet: 0x0d48103c0e85a95bcd3788509af8d003fe4f72a3
+- Contact: johndavid@whalen.art
+- Machine-readable manifest: https://whalen.art/ai-art.json
+
+## Collections
+- A World Without End — eleven-work series, Lisbon 2024. Not for sale; a body of work to be exhibited.
+- A Reality of Dreams — realized client commissions (Hope, Purpose, Beyond, Everlasting, Endless). Shown as proof of the process.
+
+## Contact
+- Email: johndavid@whalen.art
+- OpenSea: https://opensea.io/profile?addresses=0x0d48103c0e85a95bcd3788509af8d003fe4f72a3
+- X: https://x.com/JohnDavidartist
