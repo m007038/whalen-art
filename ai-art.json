@@ -39,8 +39,14 @@
     "checkout": {
       "deposit_url": "https://buy.stripe.com/5kQ3cxfr29WjeTo0hd3Nm00",
       "balance_url": "https://buy.stripe.com/8x29AV0w81pN5iOd3Z3Nm01",
-      "collected_at_deposit": ["shipping address", "Feeling the work should hold", "Wallet address for NFT certificate"],
-      "autonomous": "An AI agent can complete the commission end to end at deposit_url: supply the feeling, a shipping address, and a wallet address, and pay 2500 USD. balance_url settles the final 2500 USD once the piece is complete, before shipping."
+      "collected_at_deposit": ["email", "shipping address", "Feeling the work should hold", "Wallet address for NFT certificate"],
+      "fields_to_fill": {
+        "email": "your contact email",
+        "Feeling the work should hold": "REQUIRED. Your commission brief: the feeling, emotion, or intent you want the painting to evoke in the real world. This is where you, the buyer or agent, tell JohnDavid what to paint. He translates this feeling into the artwork.",
+        "shipping_address": "where to ship the finished physical painting",
+        "Wallet address for NFT certificate": "the blockchain wallet that should receive the NFT Certificate of Ownership"
+      },
+      "autonomous": "An AI agent can select, communicate, and pay for a commission entirely at deposit_url. Open it, fill the fields above (the 'Feeling the work should hold' field is where you describe the commission you want), and pay 2500 USD. That single Stripe checkout captures both the commission brief and the payment. balance_url settles the final 2500 USD once the piece is complete, before shipping."
     }
   },
 

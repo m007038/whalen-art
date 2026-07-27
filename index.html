@@ -165,12 +165,12 @@ section{position:relative;padding:120px 44px;max-width:1400px;margin:0 auto}
 /* section backdrops (icons behind content) */
 #hero::before,#collection::before{
   content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(rgba(7,7,5,.84),rgba(7,7,5,.92)),url("assets/icon-a-world-without-end.jpg"),url("https://drive.google.com/thumbnail?sz=w2000&id=1W5LSmVLRduxNy_77AeFbElKXEkTZYQNb");
+  background-image:linear-gradient(rgba(7,7,5,.84),rgba(7,7,5,.92)),url("assets/icon-a-world-without-end.jpg");
   background-size:cover,cover,cover;background-position:center,center,center;background-repeat:no-repeat,no-repeat,no-repeat;
 }
 #reality::before{
   content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(rgba(7,7,5,.82),rgba(7,7,5,.9)),url("assets/reality-of-dreams/icon.jpg"),url("https://drive.google.com/thumbnail?id=1pGPhITenZRxdwzzSpoKK8KTllThVPD6Y&sz=w2000");
+  background-image:linear-gradient(rgba(7,7,5,.82),rgba(7,7,5,.9)),url("assets/reality-of-dreams/icon.jpg");
   background-size:cover,cover,cover;background-position:center,center,center;background-repeat:no-repeat,no-repeat,no-repeat;
 }
 #commission{overflow:hidden}
@@ -221,7 +221,7 @@ section{position:relative;padding:120px 44px;max-width:1400px;margin:0 auto}
 .piece video.swork{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:transparent;filter:brightness(.96);transition:filter .6s ease;z-index:1}
 .piece:hover video.swork{filter:brightness(1.05)}
 /* series tiles show the whole film over the World Without End icon (no black bars) */
-.piece.awwe{background-image:url("https://drive.google.com/thumbnail?sz=w1200&id=1W5LSmVLRduxNy_77AeFbElKXEkTZYQNb");background-size:cover;background-position:center}
+.piece.awwe{background-image:url("assets/icon-a-world-without-end.jpg");background-size:cover;background-position:center}
 .piece.awwe::after{content:"";position:absolute;inset:0;background:rgba(7,7,5,.35);z-index:0;pointer-events:none}
 .piece.awwe video.swork,.piece.awwe img{object-fit:contain}
 .piece .num{position:absolute;top:14px;left:16px;font-size:10px;letter-spacing:2px;color:rgba(245,242,235,.7);z-index:2}
@@ -507,7 +507,12 @@ footer a:hover{color:var(--amber)}
       <div><span class="k">AVAILABILITY</span><span class="v">OPEN · INQUIRE BELOW</span></div>
     </div>
 
-    <form id="commissionForm" class="reveal">
+    <form id="commissionForm" class="reveal" action="https://formsubmit.co/johndavid@whalen.art" method="POST">
+      <input type="hidden" name="_subject" value="New commission inquiry from whalen.art" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://whalen.art/?sent=1" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
       <label>YOUR NAME</label>
       <input type="text" name="name" autocomplete="name" required />
       <label>EMAIL</label>
@@ -670,20 +675,10 @@ var ta = document.querySelector('textarea[name=message]');
 var cnt = document.getElementById("count");
 if(ta){ ta.addEventListener("input", function(){ cnt.textContent = ta.value.length + "/500"; }); }
 
-/* ---- form submit (static: mailto) ---- */
+/* ---- form submit: posts to FormSubmit, which emails johndavid@whalen.art ---- */
 var form = document.getElementById("commissionForm");
-form.addEventListener("submit", function(ev){
-  ev.preventDefault();
-  var f = form;
-  var subject = encodeURIComponent("Commission inquiry, " + (f.name.value || "Untitled"));
-  var body = encodeURIComponent(
-    "Name: " + f.name.value + "\n" +
-    "Email: " + f.email.value + "\n\n" +
-    "Feeling the work should hold:\n" + f.message.value + "\n\n" +
-    "How did you find JohnDavid?\n" + f.source.value
-  );
-  document.getElementById("formMsg").textContent = "TRANSMISSION QUEUED · OPENING YOUR MAIL CLIENT";
-  window.location.href = "mailto:johndavid@whalen.art?subject=" + subject + "&body=" + body;
+form.addEventListener("submit", function(){
+  document.getElementById("formMsg").textContent = "TRANSMISSION SENDING…";
 });
 </script>
 </body>
