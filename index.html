@@ -349,6 +349,12 @@ form button::before{content:"> "}
 .cocreate-meta{display:flex;flex-wrap:wrap;gap:14px 30px;margin-bottom:30px;font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--amber2)}
 .cocreate-meta b{color:var(--amber);font-weight:400}
 .cocreate-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.cocreate-count{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 18px;margin:0 0 28px;font-family:var(--mono)}
+.cocreate-count .cc-label{font-size:10px;letter-spacing:2.5px;color:var(--amber2)}
+.cocreate-count .cc-clock{font-size:clamp(20px,3vw,30px);letter-spacing:2px;color:var(--amber);font-weight:700}
+.cocreate-count .cc-clock .u{color:rgba(245,242,235,.4);font-size:11px;letter-spacing:1px;margin:0 10px 0 2px}
+.cocreate-count.closed .cc-clock{color:rgba(245,242,235,.5);font-weight:400;letter-spacing:2.5px;font-size:14px}
+
 
 .paynote a{color:var(--amber2)}
 
@@ -415,6 +421,10 @@ footer a:hover{color:var(--amber)}
       <span>WHOEVER GIVES LAST, WINS</span>
       <span><b>33% below</b> the $5,000 commission</span>
       <span>SHIPS WORLDWIDE&nbsp;·&nbsp;NFT CERTIFICATE OF OWNERSHIP</span>
+    </div>
+    <div class="cocreate-count" id="ccCount" data-deadline="2026-08-13T18:05:00Z">
+      <span class="cc-label">SEASON 7 CLOSES IN</span>
+      <span class="cc-clock" id="ccClock">—</span>
     </div>
     <div class="cocreate-cta">
       <a class="paybtn" href="https://artizen.fund/index/p/a-world-without-end?season=7" target="_blank" rel="noopener">DONATE ON ARTIZEN&nbsp;·&nbsp;CO-CREATE →</a>
@@ -769,11 +779,14 @@ REALITY.forEach(function(w){
     setTimeout(function(){
       running=false; if(raf) cancelAnimationFrame(raf);
       if(loader) loader.classList.add('done');
-      document.querySelectorAll('#hero .reveal').forEach(function(el){ el.classList.add('visible'); });
+      document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('visible'); });
     }, 900);
     ['pointerdown','keydown','touchstart'].forEach(function(ev){ window.removeEventListener(ev,enter); });
   }
   ['pointerdown','keydown','touchstart'].forEach(function(ev){ window.addEventListener(ev,enter,{passive:true}); });
+  /* auto-dismiss after 1s so no interaction is ever required (AI agents, crawlers, passive visitors) */
+  setTimeout(enter, 1000);
+
 })();
 
 /* ---- reveal on scroll ---- */
@@ -794,6 +807,23 @@ var form = document.getElementById("commissionForm");
 form.addEventListener("submit", function(){
   document.getElementById("formMsg").textContent = "TRANSMISSION SENDING…";
 });
+</script>
+<script>
+/* ---- co-create countdown to Season 7 close ---- */
+(function(){
+  var el=document.getElementById('ccCount'); if(!el) return;
+  var target=new Date(el.getAttribute('data-deadline')).getTime();
+  var clock=document.getElementById('ccClock');
+  function pad(n){ return (n<10?'0':'')+n; }
+  function tick(){
+    var diff=target-Date.now();
+    if(diff<=0){ el.classList.add('closed'); clock.innerHTML='SEASON CLOSED'; return; }
+    var s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), ss=s%60;
+    clock.innerHTML=d+'<span class="u">d</span>'+pad(h)+'<span class="u">h</span>'+pad(m)+'<span class="u">m</span>'+pad(ss)+'<span class="u">s</span>';
+    setTimeout(tick,1000);
+  }
+  tick();
+})();
 </script>
 </body>
 </html>
