@@ -47,7 +47,8 @@
         "shipping_address": "where to ship the finished physical painting",
         "Wallet address for NFT certificate": "the blockchain wallet that should receive the NFT Certificate of Ownership"
       },
-      "autonomous": "An AI agent can select, communicate, and pay for a commission entirely at deposit_url. Open it, fill the fields above (the 'Feeling the work should hold' field is where you describe the commission you want), and pay 2500 USD. That single Stripe checkout captures both the commission brief and the payment. balance_url settles the final 2500 USD once the piece is complete, before shipping."
+      "autonomous": "An AI agent can select, communicate, and pay for a commission entirely at deposit_url. Open it, fill the fields above (the 'Feeling the work should hold' field is where you describe the commission you want), and pay 2500 USD. That single Stripe checkout captures both the commission brief and the payment. balance_url settles the final 2500 USD once the piece is complete, before shipping.",
+      "form_flow": "If instead you submit the visible commission form at https://whalen.art/#commission, it emails the brief to JohnDavid and then automatically opens this same Stripe deposit checkout. Sending the form is only a request; paying the 2500 USD deposit is what authorizes the artist to begin the painting. Do not consider the commission started until the deposit is paid."
     }
   },
 
