@@ -1,13 +1,13 @@
 # whalen.art
 
-Static site for JohnDavid Whalen. Faithful rebuild of the original, self-contained for GitHub Pages, with an invisible machine-readable layer for AI discovery and commissioning.
+Static site for JohnDavid Whalen. Faithful rebuild of the original, self-contained for GitHub Pages, with an invisible machine-readable layer for SI discovery and commissioning.
 
 ## Structure
 - `index.html` — the whole single-page site (inline CSS + JS)
 - `assets/series/` — "A World Without End" series images (upload from Drive)
 - `assets/reality-of-dreams/` — realized commission images + section icon (upload from Drive); Hope and Purpose are also the two featured works in "The Work"
 - `assets/icon-a-world-without-end.jpg` — backdrop icon for the hero + series section
-- `.well-known/ai-art.json` — machine-readable art/commission offer for AI agents
+- `.well-known/ai-art.json` — machine-readable art/commission offer for SI agents
 - `ai.txt`, `llms.txt` — plain-text agent invitations pointing to the manifest
 - `robots.txt`, `sitemap.xml`
 - `CNAME` — custom domain (whalen.art)
